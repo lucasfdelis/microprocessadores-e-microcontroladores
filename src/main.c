@@ -24,15 +24,14 @@ int main(void)
 	RCC->AHB1ENR |= 1;				//habilita o clock do GPIOA
 
 	GPIOA->MODER |= (1 << 12);		//seleciona modo de saída digital no pino
-	GPIOA->MODER |= (1 << 14);
+
 	while(1)
 	{
-		for (int i=0; i<=3; i++)
-		{
-			GPIOA->ODR = ~i << 6;
-			atraso(6000000);
-		}
 
+		GPIOA->ODR &= ~(1 << 6);	//faz o estado do pino como LOW
+		atraso(90000);
+		GPIOA->ODR |= (1 << 6);
+		atraso(10000);
 
 
 
