@@ -185,82 +185,76 @@ void q10(void){
 				valor2 = 1000;
 			}
 		}
-
-
-
-
-
-
-
-
-//			GPIOA->ODR |= (1 << 7);
-//			Delay_us(valor2);
-//
-//			GPIOA->ODR |= (1 << 6);
-//			Delay_us(valor1);
-//
-//
-//			GPIOA->ODR &= ~(1 << 6);	//faz o estado do pino como LOW
-//			Delay_us(valor2);
-//
-//			GPIOA->ODR &= ~(1 << 7);	//faz o estado do pino como LOW
-//			Delay_us(valor1);
-//
-//			valor2 = valor2-1;
-//			valor1 = valor1+1;
-//			if(valor1 == 1000){
-//				valor1 = 1;
-//				valor2 = 1000;
-//			}
-//		}
-//		GPIOA->ODR &= ~(1 << 6);	//faz o estado do pino como LOW
-//		Delay_ms(1000);
-//		GPIOA->ODR |= (1 << 6);
-//		Delay_ms(1000);
 }
+
+
+void q14(void){
+
+//	GPIOA->ODR |= (1 << 0); //Vermelho 1 aceso
+//	GPIOA->ODR |= (1 << 1); // Amarelo 1 aceso
+//	GPIOA->ODR |= (1 << 2); // Verde 1 aceso
+//
+//	GPIOA->ODR |= (1 << 11); // Vermelho 2 aceso
+//	GPIOA->ODR |= (1 << 10); // Amarelo 2 aceso
+//	GPIOA->ODR |= (1 << 9); // Verde 2 aceso
+//
+//	GPIOA->ODR &= ~(1 << 0); //Vermelho 1 apagado
+//	GPIOA->ODR &= ~(1 << 1); // Amarelo 1 apagado
+//	GPIOA->ODR &= ~(1 << 2); // Verde 1 apagado
+//
+//	GPIOA->ODR &= ~(1 << 11); // Vermelho 2 apagado
+//	GPIOA->ODR &= ~(1 << 10); // Amarelo 2 apagado
+//	GPIOA->ODR &= ~(1 << 9); // Verde 2 apagado
+
+	GPIOA->ODR |= (1 << 0); //Vermelho 1 aceso
+	GPIOA->ODR |= (1 << 9); // Verde 2 aceso
+	Delay_ms(1000);
+
+	GPIOA->ODR &= ~(1 << 9); // Verde 2 apagado
+	GPIOA->ODR |= (1 << 10); // Amarelo 2 aceso
+	Delay_ms(1000);
+
+	GPIOA->ODR &= ~(1 << 10); // Amarelo 2 apagado
+	GPIOA->ODR |= (1 << 11); // Vermelho 2 aceso
+	GPIOA->ODR |= (1 << 2); // Verde 1 aceso
+	GPIOA->ODR &= ~(1 << 0); //Vermelho 1 apagado
+	Delay_ms(1000);
+
+	GPIOA->ODR &= ~(1 << 2); // Verde 1 apagado
+	GPIOA->ODR |= (1 << 1); // Amarelo 1 aceso
+	Delay_ms(1000);
+
+	GPIOA->ODR &= ~(1 << 1); // Amarelo 1 apagado
+	GPIOA->ODR |= (1 << 0); //Vermelho 1 aceso
+	GPIOA->ODR |= (1 << 9); // Verde 2 aceso
+	GPIOA->ODR &= ~(1 << 11); // Vermelho 2 apagado
+
+
+}
+
 
 int main(void)
 {
 	//palio melhor carro do brasil
 
 	Configure_Clock(); // configura sistema de clock do stm32
-	Delay_Start(); // inicializa as funções de Delay
-	//Configuração do pino PA6 como saída digital
+	Delay_Start(); // inicializa as funï¿½ï¿½es de Delay
+	//Configuraï¿½ï¿½o do pino PA6 como saï¿½da digital
 	RCC->AHB1ENR |= 1;				//habilita o clock do GPIOA
-
-	GPIOA->MODER |= (1 << 12);		//seleciona modo de saída digital no pino
-	GPIOA->MODER |= (1 << 14);		//seleciona modo de saída digital no pino
-
-	while(1)
-	{
-
-		q10();
-
-
-
-
-
-
-
-
-//		GPIOA->ODR &= ~(1 << 6);	//faz o estado do pino como LOW
-//		atraso(300000);
-//		GPIOA->ODR |= (1 << 6);		//faz o estado do pino como HIGH
 //
-//
-//
-//		atraso(3000000);
-//
-//		GPIOA->ODR &= ~(1 << 6);
-//		atraso(300000);
-//		GPIOA->ODR |= (1 << 6);
-//
-//		atraso(1000000);
-//
-//		GPIOA->ODR &= ~(1 << 6);
-//		atraso(300000);
-//		GPIOA->ODR |= (1 << 6);
-//		atraso(8000000);
+	GPIOA->MODER |= (1 << 0);		//seleciona modo de saï¿½da digital no pino
+	GPIOA->MODER |= (1 << 2);		//seleciona modo de saï¿½da digital no pino
+	GPIOA->MODER |= (1 << 4);		//seleciona modo de saï¿½da digital no pino
+	GPIOA->MODER |= (1 << 18);		//seleciona modo de saï¿½da digital no pino
+	GPIOA->MODER |= (1 << 20);		//seleciona modo de saï¿½da digital no pino
+	GPIOA->MODER |= (1 << 22);		//seleciona modo de saï¿½da digital no pino
+
+
+	while(1){
+		q14();
 	}
+
+
+
 
 }
