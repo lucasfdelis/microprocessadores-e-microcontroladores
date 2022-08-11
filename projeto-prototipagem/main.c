@@ -232,6 +232,217 @@ void q14(void){
 
 }
 
+void q15(void){
+//	GPIOA->ODR |= (1 << 0);
+//	GPIOA->ODR |= (1 << 1);
+//	GPIOA->ODR |= (1 << 2);
+//	GPIOA->ODR |= (1 << 3);
+//	GPIOA->ODR |= (1 << 9);
+//	GPIOA->ODR |= (1 << 10);
+//	GPIOA->ODR |= (1 << 11);
+
+	// 0
+	void zero(void){
+		GPIOA->ODR |= (1 << 1);
+		GPIOA->ODR |= (1 << 2);
+		GPIOA->ODR |= (1 << 3);
+		GPIOA->ODR |= (1 << 9);
+		GPIOA->ODR |= (1 << 10);
+		GPIOA->ODR |= (1 << 11);
+
+		Delay_ms(1000);
+
+		GPIOA->ODR &= ~(1 << 1);
+		GPIOA->ODR &= ~(1 << 2);
+		GPIOA->ODR &= ~(1 << 3);
+		GPIOA->ODR &= ~(1 << 9);
+		GPIOA->ODR &= ~(1 << 10);
+		GPIOA->ODR &= ~(1 << 11);
+	}
+	// 1
+
+	void um(void){
+		GPIOA->ODR |= (1 << 9); //acende
+		GPIOA->ODR |= (1 << 1); //acende
+
+		Delay_ms(1000);
+
+		GPIOA->ODR &= ~(1 << 9); //apaga
+		GPIOA->ODR &= ~(1 << 1); //apaga
+	}
+//	Delay_ms(2000);
+
+	// 2
+	void dois(void){
+		GPIOA->ODR |= (1 << 10);
+		GPIOA->ODR |= (1 << 9);
+		GPIOA->ODR |= (1 << 0);
+		GPIOA->ODR |= (1 << 3);
+		GPIOA->ODR |= (1 << 2);
+
+		Delay_ms(1000);
+
+		GPIOA->ODR &= ~(1 << 10);
+		GPIOA->ODR &= ~(1 << 9);
+		GPIOA->ODR &= ~(1 << 0);
+		GPIOA->ODR &= ~(1 << 3);
+		GPIOA->ODR &= ~(1 << 2);
+	}
+
+	// 3
+	void tres(void){
+		GPIOA->ODR |= (1 << 10);
+		GPIOA->ODR |= (1 << 9);
+		GPIOA->ODR |= (1 << 0);
+		GPIOA->ODR |= (1 << 1);
+		GPIOA->ODR |= (1 << 2);
+
+
+		Delay_ms(1000);
+
+		GPIOA->ODR  &= ~(1 << 10);
+		GPIOA->ODR  &= ~(1 << 9);
+		GPIOA->ODR  &= ~(1 << 0);
+		GPIOA->ODR  &= ~(1 << 1);
+		GPIOA->ODR  &= ~(1 << 2);
+	}
+
+	// 4
+	void quatro(void){
+		GPIOA->ODR |= (1 << 11);
+		GPIOA->ODR |= (1 << 0);
+		GPIOA->ODR |= (1 << 9);
+		GPIOA->ODR |= (1 << 1);
+
+		Delay_ms(1000);
+
+		GPIOA->ODR &= ~(1 << 11);
+		GPIOA->ODR &= ~(1 << 0);
+		GPIOA->ODR &= ~(1 << 9);
+		GPIOA->ODR &= ~(1 << 1);
+	}
+
+	// 5
+	void cinco(void){
+		GPIOA->ODR |= (1 << 10);
+		GPIOA->ODR |= (1 << 11);
+		GPIOA->ODR |= (1 << 0);
+		GPIOA->ODR |= (1 << 1);
+		GPIOA->ODR |= (1 << 2);
+
+		Delay_ms(1000);
+
+		GPIOA->ODR &= ~(1 << 10);
+		GPIOA->ODR &= ~(1 << 11);
+		GPIOA->ODR &= ~(1 << 0);
+		GPIOA->ODR &= ~(1 << 1);
+		GPIOA->ODR &= ~(1 << 2);
+	}
+	//6
+	void seis(void){
+		GPIOA->ODR |= (1 << 10);
+		GPIOA->ODR |= (1 << 11);
+		GPIOA->ODR |= (1 << 0);
+		GPIOA->ODR |= (1 << 1);
+		GPIOA->ODR |= (1 << 2);
+		GPIOA->ODR |= (1 << 3);
+
+		Delay_ms(1000);
+
+		GPIOA->ODR &= ~(1 << 10);
+		GPIOA->ODR &= ~(1 << 11);
+		GPIOA->ODR &= ~(1 << 0);
+		GPIOA->ODR &= ~(1 << 1);
+		GPIOA->ODR &= ~(1 << 2);
+		GPIOA->ODR &= ~(1 << 3);
+	}
+
+	//7
+
+	void sete(void){
+		GPIOA->ODR |= (1 << 10);
+		GPIOA->ODR |= (1 << 9);
+		GPIOA->ODR |= (1 << 1);
+
+
+		Delay_ms(1000);
+
+		GPIOA->ODR &= ~(1 << 10);
+		GPIOA->ODR &= ~(1 << 9);
+		GPIOA->ODR &= ~(1 << 1);
+	}
+
+	//8
+	void oito(void){
+		GPIOA->ODR |= (1 << 0);
+		GPIOA->ODR |= (1 << 1);
+		GPIOA->ODR |= (1 << 2);
+		GPIOA->ODR |= (1 << 3);
+		GPIOA->ODR |= (1 << 9);
+		GPIOA->ODR |= (1 << 10);
+		GPIOA->ODR |= (1 << 11);
+
+		Delay_ms(1000);
+
+		GPIOA->ODR &= ~(1 << 0);
+		GPIOA->ODR &= ~(1 << 1);
+		GPIOA->ODR &= ~(1 << 2);
+		GPIOA->ODR &= ~(1 << 3);
+		GPIOA->ODR &= ~(1 << 9);
+		GPIOA->ODR &= ~(1 << 10);
+		GPIOA->ODR &= ~(1 << 11);
+	}
+
+	//9
+	void nove(void){
+		GPIOA->ODR |= (1 << 0);
+		GPIOA->ODR |= (1 << 1);
+		GPIOA->ODR |= (1 << 2);
+		GPIOA->ODR |= (1 << 9);
+		GPIOA->ODR |= (1 << 10);
+		GPIOA->ODR |= (1 << 11);
+
+		Delay_ms(1000);
+
+		GPIOA->ODR &= ~(1 << 0);
+		GPIOA->ODR &= ~(1 << 1);
+		GPIOA->ODR &= ~(1 << 2);
+		GPIOA->ODR &= ~(1 << 9);
+		GPIOA->ODR &= ~(1 << 10);
+		GPIOA->ODR &= ~(1 << 11);
+	}
+
+
+	zero();
+	um();
+	dois();
+	tres();
+	quatro();
+	cinco();
+	seis();
+	sete();
+	oito();
+
+	nove();
+	oito();
+	sete();
+	seis();
+	cinco();
+	quatro();
+	tres();
+	dois();
+	um();
+
+
+
+
+
+
+
+
+
+
+}
 
 int main(void)
 {
@@ -245,13 +456,14 @@ int main(void)
 	GPIOA->MODER |= (1 << 0);		//seleciona modo de sa�da digital no pino
 	GPIOA->MODER |= (1 << 2);		//seleciona modo de sa�da digital no pino
 	GPIOA->MODER |= (1 << 4);		//seleciona modo de sa�da digital no pino
+	GPIOA->MODER |= (1 << 6);		//seleciona modo de sa�da digital no pino
 	GPIOA->MODER |= (1 << 18);		//seleciona modo de sa�da digital no pino
 	GPIOA->MODER |= (1 << 20);		//seleciona modo de sa�da digital no pino
 	GPIOA->MODER |= (1 << 22);		//seleciona modo de sa�da digital no pino
 
 
 	while(1){
-		q14();
+		q15();
 	}
 
 
